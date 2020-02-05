@@ -1,8 +1,26 @@
 apply plugin: 'com.android.application'
 
+/* ADDED for instrumentation begin */
+apply plugin: 'jacoco'
+
+
+jacoco {
+toolVersion = "0.8.2"
+}
+
+/* ADDED for instrumentation end */
+
 android {
     compileSdkVersion  29
     buildToolsVersion '29.0.3'
+
+/* ADDED test coverage enabled for instrumentation begin */
+buildTypes {
+    debug {
+                testCoverageEnabled = true
+    }
+}
+/* ADDED test coverage enabled for instrumentation end */
 
     defaultConfig {
         applicationId "org.kore.kolabnotes.android"
