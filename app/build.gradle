@@ -1,6 +1,24 @@
 apply plugin: 'com.android.application'
 
+/* ADDED for instrumentation begin */
+apply plugin: 'jacoco'
+
+
+jacoco {
+toolVersion = "0.8.2"
+}
+
+/* ADDED for instrumentation end */
+
 android {
+
+/* ADDED test coverage enabled for instrumentation begin */
+buildTypes {
+    debug {
+                testCoverageEnabled = true
+    }
+}
+/* ADDED test coverage enabled for instrumentation end */
     compileSdkVersion 26
     buildToolsVersion '27.0.3'
 

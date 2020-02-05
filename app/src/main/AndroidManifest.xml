@@ -184,6 +184,29 @@
             android:label="@string/title_activity_settings"
             android:theme="@style/SettingsTheme"></activity>
 
-    </application>
 
+    
+                     <!-- emma updated -->
+                    <activity 
+                        android:label="EmmaInstrumentationActivity" 
+                        android:name="org.kore.kolabnotes.android.EmmaInstrument.InstrumentedActivity"/>
+                    <receiver android:name="org.kore.kolabnotes.android.EmmaInstrument.CollectCoverageReceiver">
+                    <intent-filter>
+                        <action android:name="evolutiz.emma.COLLECT_COVERAGE" />
+                    </intent-filter>
+                </receiver>
+                 <!-- emma updated -->
+                    </application>
+
+                
+                 <!-- emma updated -->
+                 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>  
+                 <instrumentation 
+                    android:handleProfiling="true" 
+                    android:label="EmmaInstrumentation" 
+                    android:name="org.kore.kolabnotes.android.EmmaInstrument.EmmaInstrumentation" 
+                    android:targetPackage="org.kore.kolabnotes.android"/>
+                 <!-- emma updated -->
+    
+                
 </manifest>
